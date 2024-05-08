@@ -1,4 +1,5 @@
 
+let error = false;
 let equation = "";
 let display = document.getElementById("display");
 function clear() {
@@ -12,7 +13,13 @@ ACbtn.addEventListener("click", function () {
 
 function appendValue(value) {
     equation += value;
-    display.innerText = equation;
+    if (error) {
+        display.innerText = "";
+        display.innerText = equation;
+    } else {
+        display.innerText = equation;
+    }
+    
 }
 
 function calculate() {
@@ -22,5 +29,6 @@ function calculate() {
         equation = "";
     } catch (error) {
         display.innerText = "Errore";
+        equation = "";
     }
 }
