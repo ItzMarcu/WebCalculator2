@@ -16,10 +16,10 @@ function appendValue(value) {
     if (error) {
         display.innerText = "";
         display.innerText = equation;
+        error = false;
     } else {
         display.innerText = equation;
     }
-    
 }
 
 function calculate() {
@@ -30,5 +30,6 @@ function calculate() {
     } catch (error) {
         display.innerText = "Errore";
         equation = "";
+        error = true;
     }
 }
