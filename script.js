@@ -25,8 +25,12 @@ function appendValue(value) {
 function calculate() {
     try {
         let result = eval(equation);
-        display.innerText = result;
-        equation = "";
+        if (isNaN(result)) {
+            display.innerText = "Errore Matematico";
+        } else {
+            display.innerText = result;
+            equation = "";
+        }
     } catch (error) {
         display.innerText = "Errore";
         equation = "";
