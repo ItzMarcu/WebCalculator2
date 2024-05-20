@@ -4,6 +4,7 @@ let equation = "";
 let display = document.getElementById("display");
 function clear() {
     display.innerText = "";
+    equation = "";
 }
 
 let ACbtn = document.getElementById("AC")
